@@ -353,7 +353,7 @@ function HomePage() {
               <iframe
                 title="Anthonie's Deli Location"
                 src="https://maps.google.com/maps?q=4444+Cypress+Creek+Pkwy+%2335,+Houston,+TX+77068&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                className="w-full h-48 mt-4 rounded-sm border border-white/10"
+                className="w-full h-80 mt-4 rounded-sm border border-white/10"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
