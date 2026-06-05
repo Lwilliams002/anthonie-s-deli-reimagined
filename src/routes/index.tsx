@@ -95,32 +95,6 @@ const sides = [
   ["Whole Dill Pickle", "$2.00"],
 ];
 
-const combos = [
-  ["Regular", "$13.99"],
-  ["Super", "$14.99"],
-  ["Turkey", "$14.99"],
-  ["Smoked Turkey", "$14.99"],
-  ["Chicken Salad", "$14.99"],
-  ["Mortadella", "$14.99"],
-  ["Tuna", "$14.99"],
-  ["Piggy", "$14.99"],
-  ["Fried Fish", "$16.99"],
-  ["Fried Shrimp", "$16.99"],
-  ["The Club", "$16.99"],
-  ["The Reuben", "$16.99"],
-  ["Prosciutto", "$16.99"],
-  ["Gyro Beef or Chicken", "$16.99"],
-  ["Chicken Shawarma", "$16.99"],
-  ["Roast Beef", "$15.99"],
-  ["Corned Beef", "$15.99"],
-  ["Pastrami", "$15.99"],
-  ["Falafel Wrap", "$15.99"],
-  ["Muffuletta Whole", "$24.99"],
-  ["Muffuletta ½", "$16.99"],
-  ["Meatball", "$16.99"],
-  ["Nature", "$15.99"],
-  ["Philly Cheese", "$16.99"],
-];
 
 const poBoyTrays = [
   ["Small", "40 pcs / ~10 people", "$90.00"],
@@ -148,7 +122,6 @@ function HomePage() {
         </a>
         <div className="hidden md:flex gap-8 font-mono text-xs uppercase tracking-widest">
           <a href="#menu" className="hover:text-accent transition-colors">The Menu</a>
-          <a href="#combos" className="hover:text-accent transition-colors">Combos</a>
           <a href="#catering" className="hover:text-accent transition-colors">Catering</a>
           <a href="#contact" className="hover:text-accent transition-colors">Location</a>
         </div>
@@ -284,28 +257,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Combos */}
-      <section id="combos" className="px-6 py-24 max-w-7xl mx-auto">
-        <div className="mb-12">
-          <h2 className="font-display text-6xl uppercase">
-            The Combo <span className="text-accent">Board</span>
-          </h2>
-          <p className="font-mono text-xs uppercase tracking-widest text-ink/60 mt-2">
-            Includes French Fries or Chips & Can Drink
-          </p>
-        </div>
-        <div className="p-8 border-2 border-pickle/30 bg-pickle/[0.03]">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-4 font-mono text-sm">
-            {combos.map(([name, price]) => (
-              <div key={name} className="flex justify-between border-b border-dotted border-pickle/20 py-2">
-                <span className="text-ink/80">{name}</span>
-                <span className="text-pickle font-medium">{price}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Catering */}
       <section id="catering" className="bg-white border-y border-deli-border px-6 py-24">
         <div className="max-w-7xl mx-auto">
@@ -389,11 +340,16 @@ function HomePage() {
             </div>
             <div>
               <div className="font-mono text-xs uppercase tracking-widest opacity-60 mb-4">Address</div>
-              <address className="not-italic text-lg leading-relaxed">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=4444+Cypress+Creek+Pkwy+%2335,+Houston,+TX+77068"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block not-italic text-lg leading-relaxed hover:text-accent transition-colors"
+              >
                 4444 Cypress Creek Pkwy #35
                 <br />
                 Houston, TX 77068
-              </address>
+              </a>
             </div>
             <div>
               <div className="font-mono text-xs uppercase tracking-widest opacity-60 mb-4">Contact</div>
