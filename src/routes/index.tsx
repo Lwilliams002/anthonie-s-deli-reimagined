@@ -284,28 +284,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Combos */}
-      <section id="combos" className="px-6 py-24 max-w-7xl mx-auto">
-        <div className="mb-12">
-          <h2 className="font-display text-6xl uppercase">
-            The Combo <span className="text-accent">Board</span>
-          </h2>
-          <p className="font-mono text-xs uppercase tracking-widest text-ink/60 mt-2">
-            Includes French Fries or Chips & Can Drink
-          </p>
-        </div>
-        <div className="p-8 border-2 border-pickle/30 bg-pickle/[0.03]">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-4 font-mono text-sm">
-            {combos.map(([name, price]) => (
-              <div key={name} className="flex justify-between border-b border-dotted border-pickle/20 py-2">
-                <span className="text-ink/80">{name}</span>
-                <span className="text-pickle font-medium">{price}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Catering */}
       <section id="catering" className="bg-white border-y border-deli-border px-6 py-24">
         <div className="max-w-7xl mx-auto">
