@@ -350,6 +350,14 @@ function HomePage() {
                 <br />
                 Houston, TX 77068
               </a>
+              <iframe
+                title="Anthonie's Deli Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.9!2d-95.4675!3d30.0055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c5e0!2s4444+Cypress+Creek+Pkwy+%2335!5e0!3m2!1sen!2sus!4v1"
+                className="w-full h-48 mt-4 rounded-sm border border-white/10"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
             <div>
               <div className="font-mono text-xs uppercase tracking-widest opacity-60 mb-4">Contact</div>
