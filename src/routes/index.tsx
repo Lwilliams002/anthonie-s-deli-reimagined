@@ -95,32 +95,6 @@ const sides = [
   ["Whole Dill Pickle", "$2.00"],
 ];
 
-const combos = [
-  ["Regular", "$13.99"],
-  ["Super", "$14.99"],
-  ["Turkey", "$14.99"],
-  ["Smoked Turkey", "$14.99"],
-  ["Chicken Salad", "$14.99"],
-  ["Mortadella", "$14.99"],
-  ["Tuna", "$14.99"],
-  ["Piggy", "$14.99"],
-  ["Fried Fish", "$16.99"],
-  ["Fried Shrimp", "$16.99"],
-  ["The Club", "$16.99"],
-  ["The Reuben", "$16.99"],
-  ["Prosciutto", "$16.99"],
-  ["Gyro Beef or Chicken", "$16.99"],
-  ["Chicken Shawarma", "$16.99"],
-  ["Roast Beef", "$15.99"],
-  ["Corned Beef", "$15.99"],
-  ["Pastrami", "$15.99"],
-  ["Falafel Wrap", "$15.99"],
-  ["Muffuletta Whole", "$24.99"],
-  ["Muffuletta ½", "$16.99"],
-  ["Meatball", "$16.99"],
-  ["Nature", "$15.99"],
-  ["Philly Cheese", "$16.99"],
-];
 
 const poBoyTrays = [
   ["Small", "40 pcs / ~10 people", "$90.00"],
@@ -148,7 +122,6 @@ function HomePage() {
         </a>
         <div className="hidden md:flex gap-8 font-mono text-xs uppercase tracking-widest">
           <a href="#menu" className="hover:text-accent transition-colors">The Menu</a>
-          <a href="#combos" className="hover:text-accent transition-colors">Combos</a>
           <a href="#catering" className="hover:text-accent transition-colors">Catering</a>
           <a href="#contact" className="hover:text-accent transition-colors">Location</a>
         </div>
