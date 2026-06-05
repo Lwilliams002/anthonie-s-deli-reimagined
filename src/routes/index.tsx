@@ -340,11 +340,16 @@ function HomePage() {
             </div>
             <div>
               <div className="font-mono text-xs uppercase tracking-widest opacity-60 mb-4">Address</div>
-              <address className="not-italic text-lg leading-relaxed">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=4444+Cypress+Creek+Pkwy+%2335,+Houston,+TX+77068"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block not-italic text-lg leading-relaxed hover:text-accent transition-colors"
+              >
                 4444 Cypress Creek Pkwy #35
                 <br />
                 Houston, TX 77068
-              </address>
+              </a>
             </div>
             <div>
               <div className="font-mono text-xs uppercase tracking-widest opacity-60 mb-4">Contact</div>
