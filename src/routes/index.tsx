@@ -1,5 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroSandwich from "@/assets/hero-sandwich.jpg";
+import heroSandwich from "@/assets/chris-sandwich.jpg";
+import bestOfTexas from "@/assets/best-of-texas.png";
+import muffulettaImg from "@/assets/muffuletta.jpg";
+import reubenImg from "@/assets/reuben.jpg";
+import gyroImg from "@/assets/gyro.jpg";
+import shrimpImg from "@/assets/shrimp.jpg";
+import falafelImg from "@/assets/falafel-wrap.jpg";
+import greekSaladImg from "@/assets/greek-salad.jpg";
+import cateringTrayImg from "@/assets/catering-tray.jpg";
+import drinksImg from "@/assets/drinks.jpg";
+import chocolateCakeImg from "@/assets/chocolate-cake.png";
+import pimentoImg from "@/assets/pimento.jpg";
+import ibcGlassImg from "@/assets/ibc-glass.jpg";
+import godAndManImg from "@/assets/god-and-man.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -46,7 +59,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-type MenuItem = { name: string; price: string; desc: string; tag?: string };
+type MenuItem = { name: string; price: string; desc: string; tag?: string; img?: string };
 
 const sandwiches: MenuItem[] = [
   { name: "Regular", price: "$7.99", desc: "Ham, Salami, Provolone, Mayo, Chow Chow, Dill Pickles" },
@@ -54,24 +67,24 @@ const sandwiches: MenuItem[] = [
   { name: "Philly Cheese", price: "$10.99", desc: "Organic Roast Beef, Provolone, Mushrooms, Bell Pepper, Onions, Mayo" },
   { name: "Meatball", price: "$10.99", desc: "Organic Grassfed Beef Meatballs, Provolone, Parmesan, Garlic Butter, Marinara" },
   { name: "The Club", price: "$10.99", desc: "Ham, Turkey, Bacon, Swiss, Home Made Mayo, Spicy Mustard, Dill Pickles" },
-  { name: "Greek Gyros", price: "$10.99", desc: "Beef or Chicken, Organic Tomatoes, Onions, Tzatziki on Pita" },
+  { name: "Greek Gyros", price: "$10.99", desc: "Beef or Chicken, Organic Tomatoes, Onions, Tzatziki on Pita", img: gyroImg },
   { name: "Roast Beef", price: "$9.99", desc: "Provolone, Mayo, Chow Chow, Dill Pickles" },
   { name: "Pastrami", price: "$9.99", desc: "Provolone, Mayo, Chow Chow, Pickles" },
-  { name: "Reuben", price: "$10.99", desc: "Corned Beef or Pastrami, Swiss, Organic Sauerkraut, Thousand Island or Mustard" },
+  { name: "Reuben", price: "$10.99", desc: "Corned Beef or Pastrami, Swiss, Organic Sauerkraut, Thousand Island or Mustard", img: reubenImg },
   { name: "Corned Beef", price: "$9.99", desc: "Swiss, Mayo, Chow Chow, Dill Pickles" },
   { name: "Prosciutto", price: "$10.99", desc: "Aged Italian Ham, Provolone, Mayo, Chow Chow, Dill Pickles" },
   { name: "Chicken Salad", price: "$8.99", desc: "House Made (Antibiotic/Hormone Free), Provolone, Mayo, Dill Pickles" },
   { name: "Turkey", price: "$8.99", desc: "Antibiotic/Hormone Free Oven Roasted, Smoked Gouda, Home Made Mayo, Sweet Pickles" },
   { name: "Tuna", price: "$8.99", desc: "House Made Tuna Salad, Provolone, Mayo, Pickles" },
   { name: "Smoked Turkey", price: "$8.99", desc: "Antibiotic/Hormone Free, Smoked Gouda, Home Made Mayo, Sweet Pickles" },
-  { name: "New Orleans Muffuletta", price: "½ $10.99 / Whole $17.99", desc: "Ham, Salami, Mortadella, Provolone, House Olive Oil Salad", tag: "Classic" },
+  { name: "New Orleans Muffuletta", price: "½ $10.99 / Whole $17.99", desc: "Ham, Salami, Mortadella, Provolone, House Olive Oil Salad", tag: "Classic", img: muffulettaImg },
   { name: "BBQ Brisket Sandwich", price: "Market", desc: "Slow-smoked Black Angus Beef", tag: "New" },
   { name: "Mortadella", price: "$8.99", desc: "Bologna, Provolone, Mayo, Chow Chow, Pickles" },
   { name: "Piggy", price: "$8.99", desc: "House Made Ham Salad, Cheese, Mayo, Arabic Pickles, Pepper" },
   { name: "Chicken Shawarma", price: "$10.99", desc: "Organic Antibiotic/Hormone Free Chicken, Garlic Sauce, Arabic Pickles & Tomato" },
   { name: "Fried Fish", price: "$10.99", desc: "Catfish Beer Batter, Mayo, Garlic Sauce, Pickles, Lettuce & Tomato" },
-  { name: "Fried Shrimp", price: "$10.99", desc: "Mayo, House Garlic Sauce, Dill Pickles, Lettuce & Tomato" },
-  { name: "Falafel Wrap", price: "$9.99", desc: "House Made Falafel, Tahini Sauce, Onions, Tomato, Arabic Pickles" },
+  { name: "Fried Shrimp", price: "$10.99", desc: "Mayo, House Garlic Sauce, Dill Pickles, Lettuce & Tomato", img: shrimpImg },
+  { name: "Falafel Wrap", price: "$9.99", desc: "House Made Falafel, Tahini Sauce, Onions, Tomato, Arabic Pickles", img: falafelImg },
   { name: "Nature (Vegetarian)", price: "$9.99", desc: "Tabouli Salad, Feta Cheese, Lettuce, Red Onion, Olive Oil" },
 ];
 
@@ -112,6 +125,15 @@ const cateringTrays = [
   ["Greek Salad Tray 16\"", "$65.00"],
 ];
 
+const counterGallery = [
+  { src: drinksImg, alt: "Cold case stocked with sodas", caption: "Cold Case" },
+  { src: ibcGlassImg, alt: "IBC root beer in a frosty glass", caption: "Frosty IBC" },
+  { src: chocolateCakeImg, alt: "Slice of chocolate cake", caption: "House Cake" },
+  { src: pimentoImg, alt: "Pimento cheese stuffed peppers", caption: "Pimento Peppers" },
+  { src: godAndManImg, alt: "Vintage sign on the deli wall", caption: "On The Wall" },
+  { src: greekSaladImg, alt: "Greek salad with feta and olives", caption: "Greek Salad" },
+];
+
 function HomePage() {
   return (
     <div className="min-h-screen bg-paper text-ink font-body selection:bg-accent/20">
@@ -122,6 +144,7 @@ function HomePage() {
         </a>
         <div className="hidden md:flex gap-8 font-mono text-xs uppercase tracking-widest">
           <a href="#menu" className="hover:text-accent transition-colors">The Menu</a>
+          <a href="#gallery" className="hover:text-accent transition-colors">The Counter</a>
           <a href="#catering" className="hover:text-accent transition-colors">Catering</a>
           <a href="#contact" className="hover:text-accent transition-colors">Location</a>
         </div>
@@ -134,7 +157,7 @@ function HomePage() {
       </nav>
 
       {/* Hero */}
-      <header id="top" className="relative px-6 py-20 md:py-32 max-w-7xl mx-auto overflow-hidden">
+      <header id="top" className="relative px-6 py-20 md:py-28 max-w-7xl mx-auto overflow-hidden">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide">
             <div className="inline-block px-3 py-1 border border-pickle text-pickle font-mono text-[10px] uppercase tracking-widest mb-6">
@@ -168,22 +191,42 @@ function HomePage() {
           <div className="relative animate-slide [animation-delay:200ms]">
             <img
               src={heroSandwich}
-              alt="Stacked deli sandwich wrapped in butcher paper"
-              width={1024}
-              height={1024}
+              alt="Anthonie's signature stacked deli sandwich"
               className="w-full aspect-square object-cover rounded-sm shadow-2xl rotate-2 ring-1 ring-black/5"
             />
-            <div className="animate-stamp [animation-delay:800ms] absolute -top-8 -right-4 md:-right-8 bg-paper border-2 border-pickle size-36 md:size-44 rounded-full shadow-lg flex flex-col items-center justify-center text-pickle font-display text-center leading-none">
-              <div className="text-xs mb-1">🏆 Houston's Best</div>
-              <div className="text-3xl md:text-4xl">Silver</div>
-              <div className="text-base md:text-lg">Winner 2025</div>
-            </div>
+            {/* Secondary stacked photo */}
+            <img
+              src={muffulettaImg}
+              alt="New Orleans Muffuletta"
+              className="hidden md:block absolute -bottom-10 -left-12 w-44 h-44 object-cover rounded-sm shadow-xl -rotate-6 ring-1 ring-black/5 border-4 border-paper"
+            />
+            {/* Best of Texas badge */}
+            <img
+              src={bestOfTexas}
+              alt="Best of Texas Award"
+              className="animate-stamp [animation-delay:800ms] absolute -top-6 -right-4 md:-right-10 w-32 md:w-44 drop-shadow-xl rotate-6"
+            />
           </div>
         </div>
       </header>
 
+      {/* Photo strip */}
+      <section className="bg-ink py-3 overflow-hidden border-y-4 border-accent">
+        <div className="flex gap-4 animate-marquee whitespace-nowrap">
+          {[gyroImg, reubenImg, shrimpImg, falafelImg, drinksImg, chocolateCakeImg, muffulettaImg, greekSaladImg, gyroImg, reubenImg, shrimpImg, falafelImg].map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt=""
+              aria-hidden="true"
+              className="h-28 md:h-36 w-auto object-cover rounded-sm shrink-0"
+            />
+          ))}
+        </div>
+      </section>
+
       {/* Menu */}
-      <section id="menu" className="bg-white border-y border-deli-border py-24">
+      <section id="menu" className="bg-white border-b border-deli-border py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
@@ -205,19 +248,28 @@ function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-x-20 gap-y-10">
             {sandwiches.map((item) => (
-              <div key={item.name} className="group relative">
-                {item.tag && (
-                  <span className="absolute -top-3 -left-3 bg-accent text-white text-[9px] px-2 py-0.5 font-mono uppercase tracking-widest">
-                    {item.tag}
-                  </span>
+              <div key={item.name} className="group relative flex gap-4">
+                {item.img && (
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="w-24 h-24 md:w-28 md:h-28 object-cover rounded-sm shrink-0 ring-1 ring-black/5 shadow-md group-hover:scale-105 transition-transform"
+                  />
                 )}
-                <div className="flex justify-between items-end gap-4 mb-1 border-b border-dotted border-ink/20 pb-1">
-                  <h3 className="font-display text-2xl uppercase tracking-wide group-hover:text-accent transition-colors">
-                    {item.name}
-                  </h3>
-                  <span className="font-mono font-medium whitespace-nowrap text-sm">{item.price}</span>
+                <div className="flex-1 min-w-0">
+                  {item.tag && (
+                    <span className="inline-block mb-1 bg-accent text-white text-[9px] px-2 py-0.5 font-mono uppercase tracking-widest">
+                      {item.tag}
+                    </span>
+                  )}
+                  <div className="flex justify-between items-end gap-4 mb-1 border-b border-dotted border-ink/20 pb-1">
+                    <h3 className="font-display text-2xl uppercase tracking-wide group-hover:text-accent transition-colors">
+                      {item.name}
+                    </h3>
+                    <span className="font-mono font-medium whitespace-nowrap text-sm">{item.price}</span>
+                  </div>
+                  <p className="text-sm text-ink/60 leading-snug">{item.desc}</p>
                 </div>
-                <p className="text-sm text-ink/60 leading-snug">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -228,6 +280,11 @@ function HomePage() {
               <h3 className="font-display text-4xl uppercase mb-6">
                 Fresh <span className="text-accent">Salads</span>
               </h3>
+              <img
+                src={greekSaladImg}
+                alt="Greek salad with feta, olives and tomato"
+                className="w-full h-56 object-cover rounded-sm shadow-md mb-6 ring-1 ring-black/5"
+              />
               <div className="space-y-5">
                 {salads.map((s) => (
                   <div key={s.name}>
@@ -244,6 +301,11 @@ function HomePage() {
               <h3 className="font-display text-4xl uppercase mb-6">
                 The <span className="text-accent">Sides</span>
               </h3>
+              <img
+                src={pimentoImg}
+                alt="Pimento cheese stuffed peppers"
+                className="w-full h-56 object-cover rounded-sm shadow-md mb-6 ring-1 ring-black/5"
+              />
               <div className="grid grid-cols-1 gap-2 font-mono text-sm">
                 {sides.map(([name, price]) => (
                   <div key={name} className="flex justify-between border-b border-dotted border-ink/15 py-1.5">
@@ -257,8 +319,37 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Counter Gallery */}
+      <section id="gallery" className="bg-paper border-b border-deli-border py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-12">
+            <div className="font-mono text-xs uppercase tracking-widest text-pickle mb-2">From The Counter</div>
+            <h2 className="font-display text-6xl uppercase">
+              A Slice <span className="text-accent">Of Life.</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {counterGallery.map((g, i) => (
+              <figure
+                key={i}
+                className={`relative overflow-hidden rounded-sm shadow-lg ring-1 ring-black/5 group ${i % 5 === 0 ? "md:row-span-2 md:col-span-2" : ""}`}
+              >
+                <img
+                  src={g.src}
+                  alt={g.alt}
+                  className={`w-full object-cover group-hover:scale-105 transition-transform duration-700 ${i % 5 === 0 ? "h-full min-h-[20rem] md:min-h-[32rem]" : "h-48 md:h-64"}`}
+                />
+                <figcaption className="absolute bottom-3 left-3 bg-ink/85 text-paper font-mono text-[10px] uppercase tracking-widest px-2 py-1">
+                  {g.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Catering */}
-      <section id="catering" className="bg-white border-y border-deli-border px-6 py-24">
+      <section id="catering" className="bg-white border-b border-deli-border px-6 py-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-16">
             <div className="md:col-span-1">
@@ -267,6 +358,11 @@ function HomePage() {
                 <br />
                 <span className="text-accent">For The Office</span>
               </h2>
+              <img
+                src={cateringTrayImg}
+                alt="Anthonie's catering tray loaded with po-boy halves"
+                className="w-full aspect-[4/3] object-cover rounded-sm shadow-xl mb-6 ring-1 ring-black/5 -rotate-1"
+              />
               <p className="text-ink/60 mb-8">
                 Our Po-Boy party trays are the standard for Houston lunch meetings, parties, and
                 corporate events. Fresh, reliable, generously stacked.
@@ -332,6 +428,11 @@ function HomePage() {
                 <br />
                 <span className="text-accent">The Counter.</span>
               </div>
+              <img
+                src={godAndManImg}
+                alt="Inside Anthonie's Deli"
+                className="w-full max-w-md aspect-[4/3] object-cover rounded-sm mb-8 ring-1 ring-white/10 -rotate-1"
+              />
               <div className="font-mono text-xs uppercase tracking-widest opacity-60 mb-3">Our Hours</div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
                 <div>Mon–Sat: 10:00 AM – 8:00 PM</div>
