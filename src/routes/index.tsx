@@ -126,12 +126,14 @@ const cateringTrays = [
 ];
 
 const counterGallery = [
-  { src: drinksImg, alt: "Cold case stocked with sodas", caption: "Cold Case" },
+  { src: muffulettaImg, alt: "New Orleans muffuletta stacked high", caption: "The Muffuletta" },
+  { src: reubenImg, alt: "Classic reuben on rye", caption: "Reuben On Rye" },
+  { src: gyroImg, alt: "Beef gyro basket with fries", caption: "Gyro Basket" },
+  { src: shrimpImg, alt: "Fried shrimp po-boy", caption: "Fried Shrimp" },
+  { src: falafelImg, alt: "House made falafel wrap", caption: "Falafel Wrap" },
   { src: ibcGlassImg, alt: "IBC root beer in a frosty glass", caption: "Frosty IBC" },
   { src: chocolateCakeImg, alt: "Slice of chocolate cake", caption: "House Cake" },
   { src: pimentoImg, alt: "Pimento cheese stuffed peppers", caption: "Pimento Peppers" },
-  { src: godAndManImg, alt: "Vintage sign on the deli wall", caption: "On The Wall" },
-  { src: greekSaladImg, alt: "Greek salad with feta and olives", caption: "Greek Salad" },
 ];
 
 function HomePage() {
@@ -328,16 +330,16 @@ function HomePage() {
               A Slice <span className="text-accent">Of Life.</span>
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {counterGallery.map((g, i) => (
               <figure
                 key={i}
-                className={`relative overflow-hidden rounded-sm shadow-lg ring-1 ring-black/5 group ${i % 5 === 0 ? "md:row-span-2 md:col-span-2" : ""}`}
+                className={`relative overflow-hidden rounded-sm shadow-lg ring-1 ring-black/5 group ${i === 0 ? "col-span-2 row-span-2 md:col-span-2 md:row-span-2" : ""}`}
               >
                 <img
                   src={g.src}
                   alt={g.alt}
-                  className={`w-full object-cover group-hover:scale-105 transition-transform duration-700 ${i % 5 === 0 ? "h-full min-h-[20rem] md:min-h-[32rem]" : "h-48 md:h-64"}`}
+                  className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${i === 0 ? "aspect-square" : "aspect-square"}`}
                 />
                 <figcaption className="absolute bottom-3 left-3 bg-ink/85 text-paper font-mono text-[10px] uppercase tracking-widest px-2 py-1">
                   {g.caption}
