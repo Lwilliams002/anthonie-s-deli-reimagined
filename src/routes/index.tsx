@@ -126,12 +126,14 @@ const cateringTrays = [
 ];
 
 const counterGallery = [
-  { src: drinksImg, alt: "Cold case stocked with sodas", caption: "Cold Case" },
+  { src: muffulettaImg, alt: "New Orleans muffuletta stacked high", caption: "The Muffuletta" },
+  { src: reubenImg, alt: "Classic reuben on rye", caption: "Reuben On Rye" },
+  { src: gyroImg, alt: "Beef gyro basket with fries", caption: "Gyro Basket" },
+  { src: shrimpImg, alt: "Fried shrimp po-boy", caption: "Fried Shrimp" },
+  { src: falafelImg, alt: "House made falafel wrap", caption: "Falafel Wrap" },
   { src: ibcGlassImg, alt: "IBC root beer in a frosty glass", caption: "Frosty IBC" },
   { src: chocolateCakeImg, alt: "Slice of chocolate cake", caption: "House Cake" },
   { src: pimentoImg, alt: "Pimento cheese stuffed peppers", caption: "Pimento Peppers" },
-  { src: godAndManImg, alt: "Vintage sign on the deli wall", caption: "On The Wall" },
-  { src: greekSaladImg, alt: "Greek salad with feta and olives", caption: "Greek Salad" },
 ];
 
 function HomePage() {
