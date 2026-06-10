@@ -264,8 +264,8 @@ function HomePage() {
                       {item.tag}
                     </span>
                   )}
-                  <div className="flex justify-between items-end gap-4 mb-1 border-b border-dotted border-ink/20 pb-1">
-                    <h3 className="font-display text-2xl uppercase tracking-wide group-hover:text-accent transition-colors">
+                  <div className="flex flex-wrap justify-between items-end gap-x-4 gap-y-0.5 mb-1 border-b border-dotted border-ink/20 pb-1">
+                    <h3 className="font-display text-xl md:text-2xl uppercase tracking-wide group-hover:text-accent transition-colors min-w-0">
                       {item.name}
                     </h3>
                     <span className="font-mono font-medium whitespace-nowrap text-sm">{item.price}</span>
