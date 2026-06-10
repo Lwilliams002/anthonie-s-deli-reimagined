@@ -420,66 +420,112 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Footer / Contact */}
-      <footer id="contact" className="bg-ink text-paper pt-24 pb-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12 mb-24">
-            <div className="md:col-span-2">
-              <div className="font-display text-5xl md:text-6xl uppercase mb-8 leading-[0.9]">
-                See you at
-                <br />
-                <span className="text-accent">The Counter.</span>
-              </div>
-              <img
-                src={godAndManImg}
-                alt="Inside Anthonie's Deli"
-                className="w-full max-w-md aspect-[4/3] object-cover rounded-sm mb-8 ring-1 ring-white/10 -rotate-1"
-              />
-              <div className="font-mono text-xs uppercase tracking-widest opacity-60 mb-3">Our Hours</div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-                <div>Mon–Sat: 10:00 AM – 8:00 PM</div>
-                <div>Sun: 10:00 AM – 6:00 PM</div>
-              </div>
-            </div>
+      {/* Location */}
+      <section id="contact" className="bg-paper border-b border-deli-border py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
             <div>
-              <div className="font-mono text-xs uppercase tracking-widest opacity-60 mb-4">Address</div>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=4444+Cypress+Creek+Pkwy+%2335,+Houston,+TX+77068"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block not-italic text-lg leading-relaxed hover:text-accent transition-colors"
-              >
-                4444 Cypress Creek Pkwy #35
-                <br />
-                Houston, TX 77068
-              </a>
+              <div className="font-mono text-xs uppercase tracking-widest text-pickle mb-2">Find Us</div>
+              <h2 className="font-display text-6xl md:text-7xl uppercase leading-[0.9]">
+                Come Say <span className="text-accent">Hello.</span>
+              </h2>
+            </div>
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=4444+Cypress+Creek+Pkwy+%2335,+Houston,+TX+77068"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-ink text-paper px-6 py-3 font-mono text-xs uppercase tracking-widest hover:bg-accent transition-colors"
+            >
+              Get Directions →
+            </a>
+          </div>
+
+          <div className="grid md:grid-cols-5 gap-6 items-stretch">
+            {/* Map */}
+            <div className="md:col-span-3 relative group rounded-sm overflow-hidden shadow-2xl ring-1 ring-black/10">
               <iframe
                 title="Anthonie's Deli Location"
-                src="https://maps.google.com/maps?q=4444+Cypress+Creek+Pkwy+%2335,+Houston,+TX+77068&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                className="w-full h-80 mt-4 rounded-sm border border-white/10"
+                src="https://maps.google.com/maps?q=4444+Cypress+Creek+Pkwy+%2335,+Houston,+TX+77068&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-[520px] grayscale-[40%] group-hover:grayscale-0 transition-all duration-500"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-            <div>
-              <div className="font-mono text-xs uppercase tracking-widest opacity-60 mb-4">Contact</div>
-              <a
-                href="tel:2815802444"
-                className="text-2xl font-mono hover:text-accent transition-colors block mb-2"
-              >
-                (281) 580-2444
-              </a>
-              <a
-                href="https://anthoniesdeli.com"
-                className="text-sm font-mono opacity-60 hover:text-accent hover:opacity-100 transition-all"
-              >
-                anthoniesdeli.com
-              </a>
+
+            {/* Info card */}
+            <div className="md:col-span-2 bg-ink text-paper p-10 flex flex-col justify-between rounded-sm shadow-2xl">
+              <div>
+                <div className="font-mono text-[10px] uppercase tracking-widest opacity-60 mb-3">The Address</div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=4444+Cypress+Creek+Pkwy+%2335,+Houston,+TX+77068"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-display text-3xl uppercase leading-tight hover:text-accent transition-colors block mb-8"
+                >
+                  4444 Cypress<br />Creek Pkwy #35<br />
+                  <span className="text-accent">Houston, TX 77068</span>
+                </a>
+
+                <div className="h-px bg-white/15 my-6" />
+
+                <div className="font-mono text-[10px] uppercase tracking-widest opacity-60 mb-3">Hours</div>
+                <div className="space-y-1.5 font-mono text-sm mb-8">
+                  <div className="flex justify-between border-b border-white/10 pb-1.5">
+                    <span>Mon – Sat</span>
+                    <span className="opacity-80">10:00 AM – 8:00 PM</span>
+                  </div>
+                  <div className="flex justify-between border-b border-white/10 pb-1.5">
+                    <span>Sunday</span>
+                    <span className="opacity-80">10:00 AM – 6:00 PM</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="font-mono text-[10px] uppercase tracking-widest opacity-60 mb-2">Call Ahead</div>
+                <a
+                  href="tel:2815802444"
+                  className="block font-display text-4xl tracking-wide hover:text-accent transition-colors mb-4"
+                >
+                  (281) 580-2444
+                </a>
+                <a
+                  href="tel:2815802444"
+                  className="inline-block w-full text-center py-4 bg-accent text-white font-mono uppercase text-xs tracking-[0.2em] hover:bg-white hover:text-ink transition-colors"
+                >
+                  Order Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-ink text-paper pt-20 pb-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-12 mb-16 items-start">
+            <div className="md:col-span-2">
+              <div className="font-display text-5xl md:text-7xl uppercase mb-8 leading-[0.9]">
+                See you at
+                <br />
+                <span className="text-accent">The Counter.</span>
+              </div>
+              <p className="font-serif italic text-lg opacity-70 max-w-md">
+                A Houston original — hand-sliced, house-made, and served with a smile since day one.
+              </p>
+            </div>
+            <div className="w-full">
+              <img
+                src={godAndManImg}
+                alt="Inside Anthonie's Deli"
+                className="w-full h-auto object-contain rounded-sm ring-1 ring-white/10"
+              />
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/10 font-mono text-[10px] uppercase tracking-widest opacity-40 gap-2">
+          <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-white/10 font-mono text-[10px] uppercase tracking-widest opacity-50 gap-2">
             <div>© 2025 Anthonie's Deli. Menu prices subject to change.</div>
             <div>Antibiotic / Hormone Free Options Available</div>
           </div>
