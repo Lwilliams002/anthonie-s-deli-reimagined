@@ -10,9 +10,9 @@ import greekSaladImg from "@/assets/greek-salad.jpg";
 import cateringTrayImg from "@/assets/catering-tray.jpg";
 import drinksImg from "@/assets/drinks.jpg";
 import chocolateCakeImg from "@/assets/chocolate-cake.png";
-import pimentoImg from "@/assets/pimento.jpg";
 import ibcGlassImg from "@/assets/ibc-glass.jpg";
 import godAndManImg from "@/assets/god-and-man.jpg";
+import sideImage from "@/assets/Side Image.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -133,7 +133,7 @@ const counterGallery = [
   { src: falafelImg, alt: "House made falafel wrap", caption: "Falafel Wrap" },
   { src: ibcGlassImg, alt: "IBC root beer in a frosty glass", caption: "Frosty IBC" },
   { src: chocolateCakeImg, alt: "Slice of chocolate cake", caption: "House Cake" },
-  { src: pimentoImg, alt: "Pimento cheese stuffed peppers", caption: "Pimento Peppers" },
+  { src: drinksImg, alt: "Cold bottled drinks at Anthonie's Deli", caption: "Cold Drinks" },
 ];
 
 function HomePage() {
@@ -304,8 +304,8 @@ function HomePage() {
                 The <span className="text-accent">Sides</span>
               </h3>
               <img
-                src={pimentoImg}
-                alt="Pimento cheese stuffed peppers"
+                src={sideImage}
+                alt="Anthonie's Deli side item"
                 className="w-full h-56 object-cover rounded-sm shadow-md mb-6 ring-1 ring-black/5"
               />
               <div className="grid grid-cols-1 gap-2 font-mono text-sm">
