@@ -78,10 +78,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Anthonie's Deli — An Icon Reborn | Houston, TX" },
-      { name: "description", content: "Houston's beloved deli reborn. Hand-sliced meats, house-made chow chow, organic ingredients. Sandwiches, gyros, shawarma & catering on Cypress Creek Pkwy." },
+      {
+        name: "description",
+        content:
+          "Houston's beloved deli reborn. Hand-sliced meats, house-made chow chow, organic ingredients. Sandwiches, gyros, shawarma & catering on Cypress Creek Pkwy.",
+      },
       { name: "author", content: "Anthonie's Deli" },
       { property: "og:title", content: "Anthonie's Deli — An Icon Reborn" },
-      { property: "og:description", content: "Houston's Best Silver Winner 2025. Classic deli sandwiches, muffuletta, gyros, shawarma & catering trays." },
+      {
+        property: "og:description",
+        content:
+          "Houston's Best Silver Winner 2025. Classic deli sandwiches, muffuletta, gyros, shawarma & catering trays.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
@@ -93,6 +101,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,600&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        children: `
+          (() => {
+            const canonicalHost = "www.anthoniesdeli.com";
+            const repoBase = "/anthonie-s-deli-reimagined";
+            const shouldRedirect =
+              window.location.hostname === "lwilliams002.github.io" ||
+              window.location.hostname === "anthoniesdeli.com";
+
+            if (!shouldRedirect) return;
+
+            const path = window.location.pathname.startsWith(repoBase)
+              ? window.location.pathname.slice(repoBase.length) || "/"
+              : window.location.pathname;
+
+            window.location.replace(
+              "https://" +
+                canonicalHost +
+                path +
+                window.location.search +
+                window.location.hash,
+            );
+          })();
+        `,
       },
     ],
   }),

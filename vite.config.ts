@@ -6,7 +6,10 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-const githubPagesBase = "/anthonie-s-deli-reimagined/";
+const githubPagesBase = process.env.GITHUB_PAGES_BASE ?? "/";
+const normalizedGithubPagesBase = githubPagesBase.endsWith("/")
+  ? githubPagesBase
+  : `${githubPagesBase}/`;
 
 export default defineConfig({
   tanstackStart: {
@@ -15,6 +18,6 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
-    base: process.env.GITHUB_PAGES === "true" ? githubPagesBase : "/",
+    base: process.env.GITHUB_PAGES === "true" ? normalizedGithubPagesBase : "/",
   },
 });

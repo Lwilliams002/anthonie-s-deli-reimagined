@@ -1,11 +1,11 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
-const siteBase = process.env.GITHUB_PAGES_BASE ?? "/anthonie-s-deli-reimagined/";
+const customDomain = process.env.GITHUB_PAGES_CUSTOM_DOMAIN ?? "www.anthoniesdeli.com";
+const siteBase = process.env.GITHUB_PAGES_BASE ?? "/";
 const normalizedBase = siteBase.startsWith("/") ? siteBase : `/${siteBase}`;
 const baseWithTrailingSlash = normalizedBase.endsWith("/") ? normalizedBase : `${normalizedBase}/`;
-const siteUrl =
-  process.env.GITHUB_PAGES_URL ?? `https://lwilliams002.github.io${baseWithTrailingSlash}`;
+const siteUrl = process.env.GITHUB_PAGES_URL ?? `https://${customDomain}${baseWithTrailingSlash}`;
 const outDir = resolve("dist/client");
 
 async function renderStaticPage() {
@@ -38,6 +38,8 @@ await mkdir(outDir, { recursive: true });
 await writeFile(resolve(outDir, "index.html"), html);
 await writeFile(resolve(outDir, "404.html"), html);
 await writeFile(resolve(outDir, ".nojekyll"), "");
+await writeFile(resolve(outDir, "CNAME"), `${customDomain}\n`);
 
 console.log(`Exported GitHub Pages static files to ${outDir}`);
 console.log(`Site base: ${baseWithTrailingSlash}`);
+console.log(`Custom domain: ${customDomain}`);
