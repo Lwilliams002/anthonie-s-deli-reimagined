@@ -1,18 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroSandwich from "@/assets/chris-sandwich.jpg";
 import bestOfTexas from "@/assets/best-of-texas.png";
 import muffulettaImg from "@/assets/muffuletta.jpg";
-import reubenImg from "@/assets/reuben.jpg";
-import gyroImg from "@/assets/gyro.jpg";
+import regularPoBoyImg from "@/assets/Regular Po Boy Sandwich.jpg";
+import reubenImg from "@/assets/Reuben Sandwich from DoorDash.jpg";
+import gyroImg from "@/assets/Beef gyro basket.jpg";
 import shrimpImg from "@/assets/shrimp.jpg";
 import falafelImg from "@/assets/falafel-wrap.jpg";
-import greekSaladImg from "@/assets/greek-salad.jpg";
-import cateringTrayImg from "@/assets/catering-tray.jpg";
-import drinksImg from "@/assets/drinks.jpg";
-import chocolateCakeImg from "@/assets/chocolate-cake.png";
-import ibcGlassImg from "@/assets/ibc-glass.jpg";
+import chickenShawarmaImg from "@/assets/Chicken Shawarma Wrap from DoorDash.jpg";
+import greekSaladImg from "@/assets/Greek salad with beef gyro.png";
+import cateringTrayImg from "@/assets/Cagtering tray 1.jpg";
 import godAndManImg from "@/assets/god-and-man.jpg";
 import sideImage from "@/assets/Side Image.png";
+import doorDashFeatureImg from "@/assets/DoorDash Merchant Portal.jpg";
+import doorDashFoodImg from "@/assets/DoorDash Merchant Portal Image.jpg";
+import doorDashFoodOneImg from "@/assets/DoorDash Merchant Portal Image (1).jpg";
+import doorDashFoodTwoImg from "@/assets/DoorDash Merchant Portal Image (2).jpg";
+import doorDashFoodThreeImg from "@/assets/DoorDash Merchant Portal Image (3).jpg";
+import doorDashFoodFourImg from "@/assets/DoorDash Merchant Portal Image (4).jpg";
+import doorDashFoodFiveImg from "@/assets/DoorDash Merchant Portal Image (5).jpg";
+
+const ONLINE_ORDER_URL = "https://online.skytab.com/f92e61bc38b9f8bc6138c0646a850cfd";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -62,30 +69,115 @@ export const Route = createFileRoute("/")({
 type MenuItem = { name: string; price: string; desc: string; tag?: string; img?: string };
 
 const sandwiches: MenuItem[] = [
-  { name: "Regular", price: "$7.99", desc: "Ham, Salami, Provolone, Mayo, Chow Chow, Dill Pickles" },
-  { name: "Super", price: "$8.99", desc: "Extra Meat: Ham, Salami, Provolone, Mayo, Chow Chow, Dill Pickles" },
-  { name: "Philly Cheese", price: "$10.99", desc: "Organic Roast Beef, Provolone, Mushrooms, Bell Pepper, Onions, Mayo" },
-  { name: "Meatball", price: "$10.99", desc: "Organic Grassfed Beef Meatballs, Provolone, Parmesan, Garlic Butter, Marinara" },
-  { name: "The Club", price: "$10.99", desc: "Ham, Turkey, Bacon, Swiss, Home Made Mayo, Spicy Mustard, Dill Pickles" },
-  { name: "Greek Gyros", price: "$10.99", desc: "Beef or Chicken, Organic Tomatoes, Onions, Tzatziki on Pita", img: gyroImg },
+  {
+    name: "Regular",
+    price: "$7.99",
+    desc: "Ham, Salami, Provolone, Mayo, Chow Chow, Dill Pickles",
+    img: regularPoBoyImg,
+  },
+  {
+    name: "Super",
+    price: "$8.99",
+    desc: "Extra Meat: Ham, Salami, Provolone, Mayo, Chow Chow, Dill Pickles",
+  },
+  {
+    name: "Philly Cheese",
+    price: "$10.99",
+    desc: "Organic Roast Beef, Provolone, Mushrooms, Bell Pepper, Onions, Mayo",
+  },
+  {
+    name: "Meatball",
+    price: "$10.99",
+    desc: "Organic Grassfed Beef Meatballs, Provolone, Parmesan, Garlic Butter, Marinara",
+  },
+  {
+    name: "The Club",
+    price: "$10.99",
+    desc: "Ham, Turkey, Bacon, Swiss, Home Made Mayo, Spicy Mustard, Dill Pickles",
+  },
+  {
+    name: "Greek Gyros",
+    price: "$10.99",
+    desc: "Beef or Chicken, Organic Tomatoes, Onions, Tzatziki on Pita",
+    img: gyroImg,
+  },
   { name: "Roast Beef", price: "$9.99", desc: "Provolone, Mayo, Chow Chow, Dill Pickles" },
   { name: "Pastrami", price: "$9.99", desc: "Provolone, Mayo, Chow Chow, Pickles" },
-  { name: "Reuben", price: "$10.99", desc: "Corned Beef or Pastrami, Swiss, Organic Sauerkraut, Thousand Island or Mustard", img: reubenImg },
+  {
+    name: "Reuben",
+    price: "$10.99",
+    desc: "Corned Beef or Pastrami, Swiss, Organic Sauerkraut, Thousand Island or Mustard",
+    img: reubenImg,
+  },
   { name: "Corned Beef", price: "$9.99", desc: "Swiss, Mayo, Chow Chow, Dill Pickles" },
-  { name: "Prosciutto", price: "$10.99", desc: "Aged Italian Ham, Provolone, Mayo, Chow Chow, Dill Pickles" },
-  { name: "Chicken Salad", price: "$8.99", desc: "House Made (Antibiotic/Hormone Free), Provolone, Mayo, Dill Pickles" },
-  { name: "Turkey", price: "$8.99", desc: "Antibiotic/Hormone Free Oven Roasted, Smoked Gouda, Home Made Mayo, Sweet Pickles" },
+  {
+    name: "Prosciutto",
+    price: "$10.99",
+    desc: "Aged Italian Ham, Provolone, Mayo, Chow Chow, Dill Pickles",
+  },
+  {
+    name: "Chicken Salad",
+    price: "$8.99",
+    desc: "House Made (Antibiotic/Hormone Free), Provolone, Mayo, Dill Pickles",
+  },
+  {
+    name: "Turkey",
+    price: "$8.99",
+    desc: "Antibiotic/Hormone Free Oven Roasted, Smoked Gouda, Home Made Mayo, Sweet Pickles",
+  },
   { name: "Tuna", price: "$8.99", desc: "House Made Tuna Salad, Provolone, Mayo, Pickles" },
-  { name: "Smoked Turkey", price: "$8.99", desc: "Antibiotic/Hormone Free, Smoked Gouda, Home Made Mayo, Sweet Pickles" },
-  { name: "New Orleans Muffuletta", price: "½ $10.99 / Whole $17.99", desc: "Ham, Salami, Mortadella, Provolone, House Olive Oil Salad", tag: "Classic", img: muffulettaImg },
-  { name: "BBQ Brisket Sandwich", price: "Market", desc: "Slow-smoked Black Angus Beef", tag: "New" },
+  {
+    name: "Smoked Turkey",
+    price: "$8.99",
+    desc: "Antibiotic/Hormone Free, Smoked Gouda, Home Made Mayo, Sweet Pickles",
+  },
+  {
+    name: "New Orleans Muffuletta",
+    price: "½ $10.99 / Whole $17.99",
+    desc: "Ham, Salami, Mortadella, Provolone, House Olive Oil Salad",
+    tag: "Classic",
+    img: muffulettaImg,
+  },
+  {
+    name: "BBQ Brisket Sandwich",
+    price: "Market",
+    desc: "Slow-smoked Black Angus Beef",
+    tag: "New",
+  },
   { name: "Mortadella", price: "$8.99", desc: "Bologna, Provolone, Mayo, Chow Chow, Pickles" },
-  { name: "Piggy", price: "$8.99", desc: "House Made Ham Salad, Cheese, Mayo, Arabic Pickles, Pepper" },
-  { name: "Chicken Shawarma", price: "$10.99", desc: "Organic Antibiotic/Hormone Free Chicken, Garlic Sauce, Arabic Pickles & Tomato" },
-  { name: "Fried Fish", price: "$10.99", desc: "Catfish Beer Batter, Mayo, Garlic Sauce, Pickles, Lettuce & Tomato" },
-  { name: "Fried Shrimp", price: "$10.99", desc: "Mayo, House Garlic Sauce, Dill Pickles, Lettuce & Tomato", img: shrimpImg },
-  { name: "Falafel Wrap", price: "$9.99", desc: "House Made Falafel, Tahini Sauce, Onions, Tomato, Arabic Pickles", img: falafelImg },
-  { name: "Nature (Vegetarian)", price: "$9.99", desc: "Tabouli Salad, Feta Cheese, Lettuce, Red Onion, Olive Oil" },
+  {
+    name: "Piggy",
+    price: "$8.99",
+    desc: "House Made Ham Salad, Cheese, Mayo, Arabic Pickles, Pepper",
+  },
+  {
+    name: "Chicken Shawarma",
+    price: "$10.99",
+    desc: "Organic Antibiotic/Hormone Free Chicken, Garlic Sauce, Arabic Pickles & Tomato",
+    img: chickenShawarmaImg,
+  },
+  {
+    name: "Fried Fish",
+    price: "$10.99",
+    desc: "Catfish Beer Batter, Mayo, Garlic Sauce, Pickles, Lettuce & Tomato",
+  },
+  {
+    name: "Fried Shrimp",
+    price: "$10.99",
+    desc: "Mayo, House Garlic Sauce, Dill Pickles, Lettuce & Tomato",
+    img: shrimpImg,
+  },
+  {
+    name: "Falafel Wrap",
+    price: "$9.99",
+    desc: "House Made Falafel, Tahini Sauce, Onions, Tomato, Arabic Pickles",
+    img: falafelImg,
+  },
+  {
+    name: "Nature (Vegetarian)",
+    price: "$9.99",
+    desc: "Tabouli Salad, Feta Cheese, Lettuce, Red Onion, Olive Oil",
+  },
 ];
 
 const salads: MenuItem[] = [
@@ -108,7 +200,6 @@ const sides = [
   ["Whole Dill Pickle", "$2.00"],
 ];
 
-
 const poBoyTrays = [
   ["Small", "40 pcs / ~10 people", "$90.00"],
   ["Medium", "60 pcs / ~15 people", "$129.99"],
@@ -121,19 +212,19 @@ const cateringTrays = [
   ["Pistachio Baklava Tray (24 pieces)", "$65.00"],
   ["Veggie Tray", "$55.00"],
   ["Fruit Tray", "$75.00"],
-  ["Pasta Salad Tray 16\"", "$85.00"],
-  ["Greek Salad Tray 16\"", "$65.00"],
+  ['Pasta Salad Tray 16"', "$85.00"],
+  ['Greek Salad Tray 16"', "$65.00"],
 ];
 
 const counterGallery = [
-  { src: muffulettaImg, alt: "New Orleans muffuletta stacked high", caption: "The Muffuletta" },
-  { src: reubenImg, alt: "Classic reuben on rye", caption: "Reuben On Rye" },
+  { src: regularPoBoyImg, alt: "Anthonie's regular po-boy sandwich", caption: "Regular Po-Boy" },
+  { src: reubenImg, alt: "Classic reuben sandwich", caption: "Reuben On Rye" },
   { src: gyroImg, alt: "Beef gyro basket with fries", caption: "Gyro Basket" },
-  { src: shrimpImg, alt: "Fried shrimp po-boy", caption: "Fried Shrimp" },
-  { src: falafelImg, alt: "House made falafel wrap", caption: "Falafel Wrap" },
-  { src: ibcGlassImg, alt: "IBC root beer in a frosty glass", caption: "Frosty IBC" },
-  { src: chocolateCakeImg, alt: "Slice of chocolate cake", caption: "House Cake" },
-  { src: drinksImg, alt: "Cold bottled drinks at Anthonie's Deli", caption: "Cold Drinks" },
+  { src: chickenShawarmaImg, alt: "Chicken shawarma wrap", caption: "Chicken Shawarma" },
+  { src: doorDashFoodImg, alt: "Fresh deli favorite from Anthonie's", caption: "Deli Favorite" },
+  { src: doorDashFoodOneImg, alt: "Fresh sandwich from Anthonie's", caption: "Made Fresh" },
+  { src: doorDashFoodTwoImg, alt: "Anthonie's deli plate", caption: "Counter Classic" },
+  { src: doorDashFoodThreeImg, alt: "Anthonie's deli special", caption: "House Special" },
 ];
 
 function HomePage() {
@@ -145,13 +236,23 @@ function HomePage() {
           Anthonie's <span className="text-accent">Deli</span>
         </a>
         <div className="hidden md:flex gap-8 font-mono text-xs uppercase tracking-widest">
-          <a href="#menu" className="hover:text-accent transition-colors">The Menu</a>
-          <a href="#gallery" className="hover:text-accent transition-colors">The Counter</a>
-          <a href="#catering" className="hover:text-accent transition-colors">Catering</a>
-          <a href="#contact" className="hover:text-accent transition-colors">Location</a>
+          <a href="#menu" className="hover:text-accent transition-colors">
+            The Menu
+          </a>
+          <a href="#gallery" className="hover:text-accent transition-colors">
+            The Counter
+          </a>
+          <a href="#catering" className="hover:text-accent transition-colors">
+            Catering
+          </a>
+          <a href="#contact" className="hover:text-accent transition-colors">
+            Location
+          </a>
         </div>
         <a
-          href="tel:2815802444"
+          href={ONLINE_ORDER_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-ink text-paper px-5 py-2 text-sm font-mono hover:bg-accent transition-colors uppercase"
         >
           Order Now
@@ -192,8 +293,8 @@ function HomePage() {
 
           <div className="relative animate-slide [animation-delay:200ms]">
             <img
-              src={heroSandwich}
-              alt="Anthonie's signature stacked deli sandwich"
+              src={reubenImg}
+              alt="Anthonie's Reuben sandwich"
               className="w-full aspect-square object-cover rounded-sm shadow-2xl rotate-2 ring-1 ring-black/5"
             />
             {/* Secondary stacked photo */}
@@ -215,7 +316,24 @@ function HomePage() {
       {/* Photo strip */}
       <section className="bg-ink py-3 overflow-hidden border-y-4 border-accent">
         <div className="flex gap-4 animate-marquee whitespace-nowrap">
-          {[gyroImg, reubenImg, shrimpImg, falafelImg, drinksImg, chocolateCakeImg, muffulettaImg, greekSaladImg, gyroImg, reubenImg, shrimpImg, falafelImg].map((src, i) => (
+          {[
+            regularPoBoyImg,
+            reubenImg,
+            gyroImg,
+            chickenShawarmaImg,
+            doorDashFeatureImg,
+            doorDashFoodImg,
+            doorDashFoodOneImg,
+            doorDashFoodTwoImg,
+            doorDashFoodThreeImg,
+            doorDashFoodFourImg,
+            doorDashFoodFiveImg,
+            greekSaladImg,
+            regularPoBoyImg,
+            reubenImg,
+            gyroImg,
+            chickenShawarmaImg,
+          ].map((src, i) => (
             <img
               key={i}
               src={src}
@@ -268,7 +386,9 @@ function HomePage() {
                     <h3 className="font-display text-xl md:text-2xl uppercase tracking-wide group-hover:text-accent transition-colors min-w-0">
                       {item.name}
                     </h3>
-                    <span className="font-mono font-medium whitespace-nowrap text-sm">{item.price}</span>
+                    <span className="font-mono font-medium whitespace-nowrap text-sm">
+                      {item.price}
+                    </span>
                   </div>
                   <p className="text-sm text-ink/60 leading-snug">{item.desc}</p>
                 </div>
@@ -310,7 +430,10 @@ function HomePage() {
               />
               <div className="grid grid-cols-1 gap-2 font-mono text-sm">
                 {sides.map(([name, price]) => (
-                  <div key={name} className="flex justify-between border-b border-dotted border-ink/15 py-1.5">
+                  <div
+                    key={name}
+                    className="flex justify-between border-b border-dotted border-ink/15 py-1.5"
+                  >
                     <span>{name}</span>
                     <span className="text-ink/70">{price}</span>
                   </div>
@@ -325,7 +448,9 @@ function HomePage() {
       <section id="gallery" className="bg-paper border-b border-deli-border py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
-            <div className="font-mono text-xs uppercase tracking-widest text-pickle mb-2">From The Counter</div>
+            <div className="font-mono text-xs uppercase tracking-widest text-pickle mb-2">
+              From The Counter
+            </div>
             <h2 className="font-display text-6xl uppercase">
               A Slice <span className="text-accent">Of Life.</span>
             </h2>
@@ -363,7 +488,7 @@ function HomePage() {
               <img
                 src={cateringTrayImg}
                 alt="Anthonie's catering tray loaded with po-boy halves"
-                className="w-full aspect-[4/3] object-cover rounded-sm shadow-xl mb-6 ring-1 ring-black/5 -rotate-1"
+                className="w-full aspect-4/3 object-cover rounded-sm shadow-xl mb-6 ring-1 ring-black/5 -rotate-1"
               />
               <p className="text-ink/60 mb-8">
                 Our Po-Boy party trays are the standard for Houston lunch meetings, parties, and
@@ -379,12 +504,18 @@ function HomePage() {
 
             <div className="md:col-span-2 space-y-12">
               <div>
-                <h3 className="font-display text-3xl uppercase mb-4 text-pickle">Po-Boy Party Trays</h3>
+                <h3 className="font-display text-3xl uppercase mb-4 text-pickle">
+                  Po-Boy Party Trays
+                </h3>
                 <table className="w-full font-mono text-sm">
                   <thead className="border-b border-ink">
                     <tr className="text-left">
-                      <th className="pb-3 font-medium uppercase text-[10px] tracking-widest">Size</th>
-                      <th className="pb-3 font-medium uppercase text-[10px] tracking-widest">Serves</th>
+                      <th className="pb-3 font-medium uppercase text-[10px] tracking-widest">
+                        Size
+                      </th>
+                      <th className="pb-3 font-medium uppercase text-[10px] tracking-widest">
+                        Serves
+                      </th>
                       <th className="pb-3 font-medium text-right uppercase text-[10px] tracking-widest">
                         Price
                       </th>
@@ -403,7 +534,9 @@ function HomePage() {
               </div>
 
               <div>
-                <h3 className="font-display text-3xl uppercase mb-4 text-pickle">Specialty Trays</h3>
+                <h3 className="font-display text-3xl uppercase mb-4 text-pickle">
+                  Specialty Trays
+                </h3>
                 <table className="w-full font-mono text-sm">
                   <tbody className="divide-y divide-deli-border">
                     {cateringTrays.map(([name, price]) => (
@@ -425,7 +558,9 @@ function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
             <div>
-              <div className="font-mono text-xs uppercase tracking-widest text-pickle mb-2">Find Us</div>
+              <div className="font-mono text-xs uppercase tracking-widest text-pickle mb-2">
+                Find Us
+              </div>
               <h2 className="font-display text-6xl md:text-7xl uppercase leading-[0.9]">
                 Come Say <span className="text-accent">Hello.</span>
               </h2>
@@ -446,7 +581,7 @@ function HomePage() {
               <iframe
                 title="Anthonie's Deli Location"
                 src="https://maps.google.com/maps?q=4444+Cypress+Creek+Pkwy+%2335,+Houston,+TX+77068&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                className="w-full h-[520px] grayscale-[40%] group-hover:grayscale-0 transition-all duration-500"
+                className="w-full h-130 grayscale-40 group-hover:grayscale-0 transition-all duration-500"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -456,20 +591,27 @@ function HomePage() {
             {/* Info card */}
             <div className="md:col-span-2 bg-ink text-paper p-10 flex flex-col justify-between rounded-sm shadow-2xl">
               <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest opacity-60 mb-3">The Address</div>
+                <div className="font-mono text-[10px] uppercase tracking-widest opacity-60 mb-3">
+                  The Address
+                </div>
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=4444+Cypress+Creek+Pkwy+%2335,+Houston,+TX+77068"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-display text-3xl uppercase leading-tight hover:text-accent transition-colors block mb-8"
                 >
-                  4444 Cypress<br />Creek Pkwy #35<br />
+                  4444 Cypress
+                  <br />
+                  Creek Pkwy #35
+                  <br />
                   <span className="text-accent">Houston, TX 77068</span>
                 </a>
 
                 <div className="h-px bg-white/15 my-6" />
 
-                <div className="font-mono text-[10px] uppercase tracking-widest opacity-60 mb-3">Hours</div>
+                <div className="font-mono text-[10px] uppercase tracking-widest opacity-60 mb-3">
+                  Hours
+                </div>
                 <div className="space-y-1.5 font-mono text-sm mb-8">
                   <div className="flex justify-between border-b border-white/10 pb-1.5">
                     <span>Mon – Sat</span>
@@ -483,7 +625,9 @@ function HomePage() {
               </div>
 
               <div>
-                <div className="font-mono text-[10px] uppercase tracking-widest opacity-60 mb-2">Call Ahead</div>
+                <div className="font-mono text-[10px] uppercase tracking-widest opacity-60 mb-2">
+                  Call Ahead
+                </div>
                 <a
                   href="tel:2815802444"
                   className="block font-display text-4xl tracking-wide hover:text-accent transition-colors mb-4"
@@ -491,7 +635,9 @@ function HomePage() {
                   (281) 580-2444
                 </a>
                 <a
-                  href="tel:2815802444"
+                  href={ONLINE_ORDER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block w-full text-center py-4 bg-accent text-white font-mono uppercase text-xs tracking-[0.2em] hover:bg-white hover:text-ink transition-colors"
                 >
                   Order Now
