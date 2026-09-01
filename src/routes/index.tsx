@@ -140,7 +140,7 @@ const sandwiches: MenuItem[] = [
   },
   {
     name: "BBQ Brisket Sandwich",
-    price: "Market",
+    price: "Regular $14.99 / Combo $19.99",
     desc: "Slow-smoked Black Angus Beef",
     tag: "New",
   },
